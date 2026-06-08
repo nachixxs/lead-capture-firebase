@@ -1,5 +1,4 @@
 import os
-from datetime import datetime
 
 import firebase_admin
 from firebase_admin import credentials, firestore
@@ -17,9 +16,14 @@ db = firestore.client()
 
 app = FastAPI()
 
+# En producción setear ALLOWED_ORIGINS=https://tu-dominio.com en las env vars
+_raw = os.getenv("ALLOWED_ORIGINS", "")
+ALLOWED_ORIGINS = [o.strip() for o in _raw.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r"http://localhost:\d+",
+    allow_origins=ALLOWED_ORIGINS or [],
+    allow_origin_regex=None if ALLOWED_ORIGINS else r"http://localhost:\d+",
     allow_methods=["*"],
     allow_headers=["*"],
 )
