@@ -88,7 +88,7 @@ body {
 }
 
 .navbar a {
-  color: var(--text-muted) !important;
+  color: #7E7CA0 !important;
   text-decoration: none !important;
   font-family: var(--ff-ui);
   font-size: 0.7rem;
@@ -161,8 +161,8 @@ body {
 .lf-brand {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 5rem 4.5rem 5rem 5.5rem;
+  justify-content: flex-start;
+  padding: 4.5rem 4.5rem 5rem 5.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -242,7 +242,7 @@ body {
 .lf-form-panel {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 4.5rem 5.5rem 4.5rem 4.5rem;
   animation: fadeUp 0.5s 0.12s ease both;
 }
@@ -276,7 +276,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #706E92;
   margin-bottom: 0.55rem;
   transition: color 0.22s;
 }
@@ -319,6 +319,28 @@ body {
   box-shadow: 0 1px 0 0 var(--gold) !important;
 }
 
+/* Fix browser autofill white background */
+.lf-field input:-webkit-autofill,
+.lf-field input:-webkit-autofill:hover,
+.lf-field input:-webkit-autofill:focus,
+.lf-field input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--surface) inset !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  caret-color: var(--text-bright);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Select: solid dark background so options are readable */
+.lf-field select {
+  background: var(--card) !important;
+  color: var(--text-bright) !important;
+}
+
+.lf-field select option {
+  background: var(--card);
+  color: var(--text-bright);
+}
+
 .lf-field textarea {
   resize: none;
   min-height: 88px;
@@ -359,7 +381,7 @@ body {
 /* Submit button */
 .lf-submit {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1.4rem 2rem;
   margin-top: 0.75rem;
   background: var(--gold);
   color: #080600;
@@ -514,7 +536,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #706E92;
   margin-bottom: 0.45rem;
   transition: color 0.22s;
 }
@@ -545,6 +567,16 @@ body {
 .ap-field input:focus {
   border-bottom-color: var(--gold) !important;
   box-shadow: 0 1px 0 0 var(--gold) !important;
+}
+
+.ap-field input:-webkit-autofill,
+.ap-field input:-webkit-autofill:hover,
+.ap-field input:-webkit-autofill:focus,
+.ap-field input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--card) inset !important;
+  -webkit-text-fill-color: var(--text-bright) !important;
+  caret-color: var(--text-bright);
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .ap-login-btn {
