@@ -6,6 +6,8 @@ shows new leads in real time.
 
 ![Public inquiry form](frontend/public/projects/form.png)
 
+![Admin panel with live lead updates](frontend/public/projects/admin.png)
+
 ## What it does
 
 - **Public form**: name, email, phone, budget range and message. Submitted to
@@ -112,3 +114,7 @@ Small portfolio project; no live demo is linked. Things to know before deploying
 - The frontend is meant for a static host and the backend for a Python host; set
   `ALLOWED_ORIGINS` to the frontend's origin and `VITE_BACKEND_URL` to the API's
   URL.
+
+## License
+
+[MIT](LICENSE)
